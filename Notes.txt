@@ -1,0 +1,108 @@
+IoC - Inversion of Control is the design concept for loose coupling of components
+IoC handles the control of object creation, configuration and lifecycle management.
+
+DI - Dependency injection is the handleing of objects and services (Dependencies)
+externally which can be used by clsses without instantiating them.  -- check again
+
+MVC - Model-View-Controller
+
+Model - Handles the business logic and data similar to backend (database and
+business logic)
+
+View - The method how the sent data is viewed by the user similar to fontend (UI)
+
+Controller - Processing requests similar to backend user request handelling
+
+Spring Web Application - The web application of spring consists of 3 layer namely
+Controller, Servic and Repososity.
+
+Controller Layer - Handles the client request like user input and handles what data
+can be displayed to the users.
+
+Service Layer - The backend business logic is applied in this layer.
+
+Repososity Layer - Interacts with the database performing the CRUD operations.
+
+
+
+*****Annotations*****
+@Component - This annotation is used to infroms the spring which classes that are
+required to have in the IoC of objcet creation and the class with this bean wil be
+registered as an bean by spring.
+
+@Autowired - Automatically injects the refing bean to the calling class.
+
+@Pimary - Gives a priority to a bean when there are multiple beans of the same type.
+Annotation will be applied at class level after @Component 
+
+@Qualifier - Will inject the bean specified by annotation and override the primary
+annotation if present. Annotation will be applied before the inisiation of the reference
+object at a local level after @Autowired. The parameter passed to the annotation will the
+name of the bean which is usually the class name with the first character being lowecase
+
+@RequestMapping - Annotation is used to perform a certain task for when a the URL is called
+for in the web.
+
+@Data - Is an annotation from lombok which is used to generate commonly generated methods for
+a class like getters, setters, toString, equals, hashCode, RequiredArgsConstructors
+
+@AllArgumentConstrctor - Creates a contructor with all the variables in the class as arguments
+including final variables.
+
+@Controller - Is a specilized component
+
+@Service - Is a specilized component
+
+
+*****Extra*****
+**Field injection**
+@Autowired
+private A obj;
+
+**Constructor injection**
+private A obj;
+
+public B(A obj) {
+    this.obj = obj;
+}
+
+doesn't require the @Autowired annotation as it will be applied Automatically
+
+**Setter injection**
+private A obj;
+
+@Autowired
+public setObj(A obj) {
+    this.obj = obj;
+}
+
+
+
+**Field injection with @Qualifier**
+@Autowired
+@Qualifier("c")
+private A obj;
+
+**Constructor injection with @Qualifier**
+private A obj;
+
+public B(@Qualifier("c") A obj) {
+    this.obj = obj;
+}
+
+doesn't require the @Autowired annotation as it will be applied Automatically
+
+**Setter injection with @Qualifier**
+private A obj;
+
+@Autowired
+@Qualifier("c")
+public setObj(A obj) {
+    this.obj = obj;
+}
+
+
+
+*****Debugging*****
+
+If Parameter 0 of constructor is found add an no parameter constructor to the class
