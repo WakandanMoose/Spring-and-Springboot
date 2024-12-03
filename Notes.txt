@@ -53,6 +53,15 @@ including final variables.
 
 @Service - Is a specilized component
 
+@PathVariable - Is used to denote which variable to attract from the URL in a @RequestMapping or
+other mapping annotations.
+
+@GetMapping - Shorthand method for HTTP GET request and a cleaner method in comparison to 
+@RequestMapping and defining it as a get method.
+
+@RequestBody - 
+
+
 
 *****Extra*****
 **Field injection**

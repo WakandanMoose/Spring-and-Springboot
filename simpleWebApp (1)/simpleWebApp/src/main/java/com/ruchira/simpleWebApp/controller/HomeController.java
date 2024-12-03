@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 
     @RequestMapping("/")  // '/' refers to the home page of localhost:8080
-//    @ResponseBody
+    // @ResponseBody
     // @ResponseBody -  used to display the content on the web
     public String greet() {
         return "Welcome to Spring Boot.";
